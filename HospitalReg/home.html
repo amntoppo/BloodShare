@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>User Authentication</title>
+
+    <!-- firebase -->
+    <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
+
+    <!--jquery CDN  -->
+    <script
+        src="https://code.jquery.com/jquery-3.3.1.min.js" 
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous">
+    </script>
+
+    <!-- Bootstrap CDN-->
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <center>
+        <div class="container" id="DDD">
+
+            <h1 >Sign Up for Hospitals and Clinics</h1>
+            <br>
+            <input id="txtEmail" type="email" placeholder="Email"><br>
+
+            <input id="txtPassword" type="password" placeholder="Password"><br>
+
+            <br>
+
+            <button id="btnLogin"  class="btn btn-primary">
+                Log in
+            </button>
+
+            <button id="btnSignUp" class="btn btn-primary">
+                Sign Up
+            </button>
+
+
+        </div>
+        <button id="btnLogout" class="btn btn-primary hide">
+            Log out
+        </button>
+
+        <div class="container" id="DD">
+            <h1>Hospital Details</h1>
+            <br><br>
+
+            <form id="recommendationForm">
+                <div class="form-group">
+
+                    <input class="form-control" id="talkTitle" placeholder="Address Line 1">
+                </div>
+
+                <div class="form-group">
+
+                    <input class="form-control" id="talkPresenter" placeholder="Address Line 2">
+                </div>
+
+                <div class="form-group">
+
+                    <input class="form-control" id="talkLink" placeholder="PIN Code">
+                </div>
+
+                <!-- When you click this button, trigger the submit event on this form. -->
+                <button type="submit" class="btn btn-default">Submit</button>
+            </form>
+
+
+        </div>
+    </center>
+    <script src="./auth.js"></script>
+    <script src="./application.js"></script>
+</body>
+</html>
