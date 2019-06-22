@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "296560225621",
+    "firebase_url": "https://bloodshare-263a1.firebaseio.com",
+    "project_id": "bloodshare-263a1",
+    "storage_bucket": "bloodshare-263a1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:296560225621:android:556ec0a0563bdcee",
+        "android_client_info": {
+          "package_name": "com.hack.bloodshare"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "296560225621-59r786fcdmad1r31si3vggvrqh4ti2j0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.hack.bloodshare",
+            "certificate_hash": "2633118059a25b9fae511e9e7d757ff4f7a70523"
+          }
+        },
+        {
+          "client_id": "296560225621-cqvldiq2bseb7h3cb5ud3098296fectr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBRbz78neRVHg6CFfdEMc6gBDDMO7eppQw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "296560225621-cqvldiq2bseb7h3cb5ud3098296fectr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
