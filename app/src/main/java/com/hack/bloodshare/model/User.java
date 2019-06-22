@@ -1,4 +1,4 @@
-package com.hack.bloodshare;
+package com.hack.bloodshare.model;
 
 public class User {
 

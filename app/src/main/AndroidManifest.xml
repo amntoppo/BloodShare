@@ -32,6 +32,9 @@
         <activity android:name=".newUserActivity">
 
         </activity>
+        <activity android:name=".PatientClass">
+
+        </activity>
         <service
             android:name=".pushNotification"
             android:exported="false">

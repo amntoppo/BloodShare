@@ -1,6 +1,7 @@
 package com.hack.bloodshare;
 
         import android.content.Intent;
+        import android.content.SharedPreferences;
         import android.os.Bundle;
         import androidx.appcompat.app.AppCompatActivity;
         import android.util.Log;
@@ -13,6 +14,7 @@ package com.hack.bloodshare;
         import com.google.firebase.auth.UserProfileChangeRequest;
         import com.google.firebase.database.DatabaseReference;
         import com.google.firebase.database.FirebaseDatabase;
+        import com.hack.bloodshare.model.User;
 
 public class newUserActivity extends AppCompatActivity {
 
@@ -55,7 +57,13 @@ public class newUserActivity extends AppCompatActivity {
                     //mDatabase.child("users").child(currentUser.getUid()).child("group").setValue(group);
                     Toast.makeText(getApplicationContext(), name, Toast.LENGTH_LONG).show();
                     Log.e("logged", name);
+
+                    SharedPreferences.Editor prefs = getSharedPreferences("BLOOD", MODE_PRIVATE).edit();
+                    prefs.putString("group", group);
+                    prefs.apply();
+
                     Intent intent = new Intent(newUserActivity.this, MainActivity.class);
+                    //intent.putExtra("group", group);
                     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                     Toast.makeText(getApplicationContext(),"Success",Toast.LENGTH_SHORT).show();
                     startActivity(intent);

@@ -7,8 +7,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.Toast;
 //import android.util.Log;
 //import android.widget.Toast;
@@ -40,76 +42,71 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
-    private final String JSONString = "";
-    private JsonArrayRequest request;
-    private RequestQueue requestQueue;
-    private List<Receivers> receiversList;
-    private RecyclerView recyclerView;
+//    private final String JSONString = "https://api.myjson.com/bins/1cc78d";
+//    private JsonArrayRequest request;
+//    private RequestQueue requestQueue;
+//    private List<Receivers> receiversList;
+//    private RecyclerView recyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.home_activity);
 
         mAuth = FirebaseAuth.getInstance();
-        recyclerView = findViewById(R.id.recyclerviewid);
-        receiversList = new ArrayList<>();
-        JsonRequest();
+//        recyclerView = findViewById(R.id.recyclerviewid);
+//        receiversList = new ArrayList<>();
+//        JsonRequest();
 
-
-
-
-        FirebaseMessaging.getInstance().subscribeToTopic("Blood")
-                .addOnCompleteListener(new OnCompleteListener<Void>() {
-                    @Override
-                    public void onComplete(@NonNull Task<Void> task) {
-                        String msg = "Success";
-                        if (!task.isSuccessful()) {
-                            msg = "Failed";
-                        }
-                        Log.d("push", msg);
-                        Toast.makeText(MainActivity.this, msg, Toast.LENGTH_SHORT).show();
-                    }
-                });
-    }
-
-    private void JsonRequest() {
-        request = new JsonArrayRequest(JSONString, new Response.Listener<JSONArray>() {
+        findViewById(R.id.patientButton).setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onResponse(JSONArray response) {
-                JSONObject jsonObject = null;
-                for(int i=0; i< response.length(); i++) {
-                    try {
-                        jsonObject = response.getJSONObject(i);
-                        Receivers receivers = new Receivers();
-                        receivers.setName(jsonObject.getString("name"));
-                        receivers.setGroup(jsonObject.getString("group"));
-                        receiversList.add(receivers);
-
-
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                    }
-
-                }
-                setupRecyclerView(receiversList);
-
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,PatientClass.class);
+                startActivity(intent);
+                finish();
             }
         });
-        requestQueue = Volley.newRequestQueue(MainActivity.this);
-        requestQueue.add(request);
+
+
     }
 
-    private void setupRecyclerView(List<Receivers> receiversList) {
-        RecyclerViewAdapter adapter = new RecyclerViewAdapter(this, receiversList);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.setAdapter(adapter);
-    }
+//    private void JsonRequest() {
+//        request = new JsonArrayRequest(JSONString, new Response.Listener<JSONArray>() {
+//            @Override
+//            public void onResponse(JSONArray response) {
+//                JSONObject jsonObject = null;
+//                for(int i=0; i< response.length(); i++) {
+//                    try {
+//                        jsonObject = response.getJSONObject(i);
+//                        Receivers receivers = new Receivers();
+//                        receivers.setName(jsonObject.getString("name"));
+//                        receivers.setGroup(jsonObject.getString("group"));
+//                        receiversList.add(receivers);
+//
+//
+//                    } catch (JSONException e) {
+//                        e.printStackTrace();
+//                    }
+//
+//                }
+//                setupRecyclerView(receiversList);
+//
+//            }
+//        }, new Response.ErrorListener() {
+//            @Override
+//            public void onErrorResponse(VolleyError error) {
+//
+//            }
+//        });
+//        requestQueue = Volley.newRequestQueue(MainActivity.this);
+//        requestQueue.add(request);
+//    }
+
+//    private void setupRecyclerView(List<Receivers> receiversList) {
+//        RecyclerViewAdapter adapter = new RecyclerViewAdapter(this, receiversList);
+//        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+//        recyclerView.setAdapter(adapter);
+//    }
 
     @Override
     public void onStart() {
@@ -122,5 +119,24 @@ public class MainActivity extends AppCompatActivity {
             startActivity(authIntent);
             finish();
         }
+
+
+        SharedPreferences prefs = getSharedPreferences("BLOOD", MODE_PRIVATE);
+        String group = prefs.getString("group", null);
+
+
+
+        FirebaseMessaging.getInstance().subscribeToTopic(group)
+                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        String msg = "Success";
+                        if (!task.isSuccessful()) {
+                            msg = "Failed";
+                        }
+                        Log.d("push", msg);
+                        Toast.makeText(MainActivity.this, msg, Toast.LENGTH_SHORT).show();
+                    }
+                });
     }
 }
