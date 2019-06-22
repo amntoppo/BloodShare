@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@android:color/holo_red_light"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+
+        tools:srcCompat="@drawable/donateblood" />
+
+    <Button
+        android:id="@+id/patientButton"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="350dp"
+        android:layout_marginLeft="60dp"
+        android:text="Patients" />
+    <Button
+        android:id="@+id/hospitalButton"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="350dp"
+        android:layout_marginLeft="220dp"
+        android:text="Hospitals" />
+    <Button
+    android:id="@+id/accountButton"
+    android:layout_width="100dp"
+    android:layout_height="50dp"
+    android:layout_marginTop="490dp"
+    android:layout_marginLeft="60dp"
+    android:text="Account" />
+    <Button
+        android:id="@+id/donationButton"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="490dp"
+        android:layout_marginLeft="220dp"
+        android:text="Donations" />
+
+</RelativeLayout>
