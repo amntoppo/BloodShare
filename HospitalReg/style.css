@@ -1,0 +1,64 @@
+/* Bordered form */
+body
+{
+    margin:0 auto;
+    padding:0px;
+    text-align:center;
+    width:100%;
+    font-family:"Times New Roman", Times, serif;
+    background-color:#990033;
+}
+
+input[type=text], input[type=email] {
+    width: 30%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+h1{
+    color: azure;
+}
+
+/* Full-width inputs */
+input[type=text], input[type=password] {
+    width: 30%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+
+/* Set a style for all buttons */
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 10px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 10%;
+    border-radius: 4px;
+
+}
+
+.btn-primary {
+    background-color: #ffffff;
+    color: black;
+
+}
+
+
+.hide {
+    background-color: orange;
+    display:none;
+}
+
+/* Add padding to containers */
+.container {
+    padding: 100px;
+}
