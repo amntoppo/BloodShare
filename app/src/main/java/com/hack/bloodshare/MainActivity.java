@@ -123,6 +123,13 @@ public class MainActivity extends AppCompatActivity {
 
         SharedPreferences prefs = getSharedPreferences("BLOOD", MODE_PRIVATE);
         String group = prefs.getString("group", null);
+        if(group.endsWith("+")) {
+            group = group.substring(0, group.length()-1) + "positive";
+        }
+        else if(group.endsWith("-")) {
+            group = group.substring(0, group.length()-1) + "negative";
+        }
+        Toast.makeText(this, group, Toast.LENGTH_SHORT).show();
 
 
 

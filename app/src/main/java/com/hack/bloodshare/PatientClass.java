@@ -23,7 +23,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 public class PatientClass extends AppCompatActivity {
 
-    private final String JSONString = "https://api.myjson.com/bins/1cc78d";
+    //private final String JSONString = "https://api.myjson.com/bins/1cc78d";
+    private final String JSONString = "https://www.jsonstore.io/d97e1b94428e1fe66e4485a763e15d98fd2110302ca9b5b67f59a9a400de9563";
     private JsonArrayRequest request;
     private RequestQueue requestQueue;
     private List<Receivers> receiversList;
