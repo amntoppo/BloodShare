@@ -2,39 +2,41 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Request Blood</title>
+<!-- firebase -->
+    <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
+  <script
+          src="https://code.jquery.com/jquery-3.3.1.min.js"
+          integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+          crossorigin="anonymous">
+  </script>
+  <script src="./push.js"></script>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
-<div class="row">
-  <div class="container">
-    <br>
-    <h2>Emergency Blood Requirement</h2>
-    <br>
-    <div class="alert alert-success success-message" style="display:none;">Form submitted successfully.</div>
-    <form id="contactForm">
-      <div class="form-group">
-        <label for="exampleFullName">Full Name</label>
-        <input type="text" class="form-control fullname" id="exampleFullName" required>
-      </div>
-      <div class="form-group">
-        <label for="exampleBlood">Required Blood Group </label>
-        <input type="text" class="form-control subject" id="exampleBlood" required>
-      </div>
-      <div class="form-group">
-        <label for="exampleHospital">Hospital</label>
-        <input type="text" class="form-control hospital" id="exampleHospital" required>
-      </div>
 
-      <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input type="text" class="form-control" id="name" aria-describedby="emailHelp" placeholder="name">
   </div>
-</div>
+  <div class="form-group">
+    <label for="group">Password</label>
+    <input type="text" class="form-control" id="group" placeholder="group">
+  </div>
+  <button type="submit" onclick="onClick()" class="btn btn-primary">Submit</button>
 
-
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script>
+  const config = {
+    apiKey: "AIzaSyCLlswtnmfdC-eIEZzmiHVUKlz65xMSTi8",
+    authDomain: "bloodshare-263a1.firebaseapp.com",
+    databaseURL: "https://bloodshare-263a1.firebaseio.com",
+    projectId: "bloodshare-263a1",
+    storageBucket: "bloodshare-263a1.appspot.com",
+    messagingSenderId: "296560225621",
+    appId: "1:296560225621:web:89d6af807380530c"
+  };
+  firebase.initializeApp(config);
+</script>
 
 </body>
 </html>

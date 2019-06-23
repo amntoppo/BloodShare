@@ -41,6 +41,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
         holder.receiverName.setText(mData.get(position).getName());
         holder.receiverGroup.setText(mData.get(position).getGroup());
+        holder.location.setText(mData.get(position).getLocation());
 
     }
 
@@ -53,12 +54,15 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
         TextView receiverName;
         TextView receiverGroup;
+        TextView location;
 
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             receiverName = itemView.findViewById(R.id.receiverName);
             receiverGroup = itemView.findViewById(R.id.receiverGroup);
+            location = itemView.findViewById(R.id.location);
+
         }
     }
 }

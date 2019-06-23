@@ -37,8 +37,8 @@
             android:layout_marginTop="5dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Group:"
-            android:id="@+id/Group"/>
+            android:text="location"
+            android:id="@+id/location"/>
 
 
         <TextView
