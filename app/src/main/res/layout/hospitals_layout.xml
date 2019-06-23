@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:background="@android:color/holo_red_light"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textView2"
+        android:textSize="@android:dimen/app_icon_size"
+        android:layout_width="match_parent"
+        android:textColor="@android:color/background_light"
+        android:layout_height="100dp"
+        android:gravity="center"
+        android:text="Blood banks:" />
+
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_marginTop="5dp"
+        android:padding="8dp"
+        android:background="@drawable/bgg"
+        android:layout_below="@+id/textView2"
+        android:id="@+id/firstLayout">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:orientation="vertical"
+            android:layout_margin="8dp">
+
+
+            <TextView
+                android:textColor="#fff"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/receiverNaame"
+                android:text="Gurunanak Hospital"
+                android:textStyle="bold"
+                android:textSize="18sp"/>
+
+            <TextView
+                android:textColor="#fff"
+                android:layout_marginTop="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="A+    5 units         A-    10 units
+B+    18 units        B-    2 units
+O-    3  units         O+    4 units
+AB+   2 unit          AB-    2units"
+                android:id="@+id/someid"/>
+
+
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_marginTop="5dp"
+        android:padding="8dp"
+        android:background="@drawable/bgg"
+        android:layout_below="@+id/firstLayout"
+        android:id="@+id/secondLayout">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:orientation="vertical"
+        android:layout_margin="8dp">
+
+
+        <TextView
+            android:textColor="#fff"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/receivearNaame"
+            android:text="RIMS"
+            android:textStyle="bold"
+            android:textSize="18sp"/>
+
+        <TextView
+            android:textColor="#fff"
+            android:layout_marginTop="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="A+    8 units         A-    0 units
+B+    15 units        B-    6 units
+O-    8  units         O+    7 units
+AB+   0 unit          AB-    1 units"
+            android:id="@+id/someaid"/>
+
+
+
+
+    </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_marginTop="5dp"
+        android:padding="8dp"
+        android:background="@drawable/bgg"
+        android:layout_below="@+id/secondLayout"
+        android:id="@+id/thirdLayout">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:orientation="vertical"
+            android:layout_margin="8dp">
+
+
+            <TextView
+                android:textColor="#fff"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/receive"
+                android:text="Medanta Hospital"
+                android:textStyle="bold"
+                android:textSize="18sp"/>
+
+            <TextView
+                android:textColor="#fff"
+                android:layout_marginTop="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="A+    9 units         A-    1 units
+B+    15 units        B-    1 units
+O-    4  units         O+    2 units
+AB+   2 unit          AB-    7 units"
+                android:id="@+id/someaaid"/>
+
+
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+</RelativeLayout>

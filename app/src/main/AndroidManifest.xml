@@ -35,6 +35,9 @@
         <activity android:name=".PatientClass">
 
         </activity>
+        <activity android:name=".hospitals">
+
+        </activity>
         <service
             android:name=".pushNotification"
             android:exported="false">
